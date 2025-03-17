@@ -1,4 +1,5 @@
 import random
+import sys
 
 # Preguntas para el juego
 questions = [
@@ -38,8 +39,14 @@ for _ in range(3):
 
     # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = int(input("Respuesta: ")) - 1
-
+        try:
+            user_answer = int(input("Respuesta: ")) - 1
+        except ValueError:
+            print("Respuesta no válida. Debe ingresar un número entero.")
+            sys.exit(1)
+        if user_answer < 0 or user_answer > 3:
+            print(f"Respuesta no válida. Debe ingresar un numero entre 1 y 4")
+            sys.exit(1)
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!")
