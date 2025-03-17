@@ -30,7 +30,7 @@ puntaje = 0
 correct_answers_index = [1, 2, 0, 3, 1]
 
 # Se genera una lista que contenga 3 de las preguntas,respuestas posibles y respuesta correcta de manera que no haya preguntas repetidas
-questions_to_ask = random.choices(
+questions_to_ask = random.sample(
     list(zip(questions, answers, correct_answers_index)), k=3
 )
 
