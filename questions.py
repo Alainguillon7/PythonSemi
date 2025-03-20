@@ -68,4 +68,6 @@ for question, options, answer in questions_to_ask:
     print()
 
 # Imprimir puntaje
+if puntaje < 0:
+    puntaje = 0
 print(f"El puntaje final es {puntaje}")
